@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoadURLImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J1G-mM-qEl">
+                                <rect key="frame" x="12" y="28" width="350" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ghc-wV-ezN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sr-rs-rOD">
+                                <rect key="frame" x="16" y="361" width="74" height="30"/>
+                                <state key="normal" title="Show Pic 1"/>
+                                <connections>
+                                    <action selector="btnShow1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adm-Mp-6MT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-r2-s5U">
+                                <rect key="frame" x="283" y="361" width="76" height="30"/>
+                                <state key="normal" title="Show Pic 2"/>
+                                <connections>
+                                    <action selector="btnShow2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQ5-Q7-ROg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J1G-mM-qEl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Dg1-pO-yea"/>
+                            <constraint firstItem="J1G-mM-qEl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gqr-Ru-XX9"/>
+                            <constraint firstItem="J1G-mM-qEl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="Vlh-JF-hce"/>
+                            <constraint firstItem="DkI-r2-s5U" firstAttribute="top" secondItem="J1G-mM-qEl" secondAttribute="bottom" constant="33" id="bs7-6g-9UD"/>
+                            <constraint firstItem="DkI-r2-s5U" firstAttribute="leading" secondItem="0sr-rs-rOD" secondAttribute="trailing" constant="193" id="faM-v0-3DW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0sr-rs-rOD" secondAttribute="leading" id="piJ-fZ-wUz"/>
+                            <constraint firstItem="0sr-rs-rOD" firstAttribute="top" secondItem="J1G-mM-qEl" secondAttribute="bottom" constant="33" id="vSm-pm-hF1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DkI-r2-s5U" secondAttribute="trailing" id="zfP-7q-LHL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="urlImage" destination="J1G-mM-qEl" id="cqj-o7-eqy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
